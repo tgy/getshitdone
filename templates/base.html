@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block page_title %}getshitdone{% endblock %}</title>
+        <meta charset="utf-8" />
+        <meta name="description" content="getshitdone">
+        <link href="https://fonts.googleapis.com/css?family=Roboto"
+        rel="stylesheet">
+        <link rel="stylesheet" href="/static/css/design.css" type="text/css"
+        media="screen" charset="utf-8">
+        <link rel="stylesheet" href="/static/css/milligram.min.css"
+        type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="/static/css/codehl.css" type="text/css"
+        media="screen" charset="utf-8">
+        {% block stylesheet %}{% endblock stylesheet %}
+        {% block scripts %}{% endblock scripts %}
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h3 id="logo">get shit done</h3>
+                <ul id="menu">
+                    <li>
+                        <a href="">Timeline</a>
+                    </li>
+                    <li {% if app == 'todo' %} class="current"{% endif %}>
+                        <a href="{% url 'todo:tasks' %}">Tasks</a>
+                    </li>
+                    <li>
+                        <a href="">Research Ideas</a>
+                    </li>
+                    <li>
+                        <a href="">Meeting Minutes</a>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </header>
+            <div id="content">
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
+    </body>
+</html>

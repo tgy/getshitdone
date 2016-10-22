@@ -1,0 +1,114 @@
+@import "../fonts/Serif/cmun-serif.css";
+
+body {
+}
+
+#wrapper {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+}
+
+#logo {
+    margin: 0;
+    text-align: center;
+}
+
+#menu {
+    padding: 15px 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+#menu li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+#menu li a {
+    padding: 7px 10px;
+}
+
+#menu li a:hover {
+    background: rgba(96, 108, 118, 0.1);
+}
+
+#menu li.current a {
+    font-weight: bold;
+    background: rgba(155, 77, 202, 0.1);
+}
+
+#menu li.current a:hover {
+    color: #9b4dca;
+    background: rgba(155, 77, 202, 0.1);
+}
+
+#boards {
+    margin: 0 0 7px 0;
+    list-style-type: none;
+}
+
+#boards li {
+    display: inline-block;
+    margin: 0 6px;
+}
+
+#boards li:first-child {
+    margin-left: 0;
+}
+
+#boards li a {
+    display: inline-block;
+    padding: 3px 10px;
+}
+
+#content .tasks .task {
+    margin-bottom: 10px;
+}
+
+#content .tasks .task .text {
+    font-size: 11pt;
+    padding: 10px;
+}
+
+#content .tasks .task .actions {
+    line-height: 1em;
+    font-size: 16pt;
+}
+
+#board_title {
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-size: 18pt;
+}
+
+.task.green, .board.green {
+    background: rgba(164, 208, 95, 0.2);
+    color: rgb(164, 208, 95);
+}
+
+.task.blue, .board.blue {
+    background: rgba(37, 162, 166, 0.2);
+    color: rgb(37, 162, 166);
+}
+
+.task.yellow, .board.yellow {
+    background: rgba(253, 221, 98, 0.2);
+    color: rgb(253, 221, 98);
+}
+
+.task.red, .board.red {
+    background: rgba(244, 143, 151, 0.2);
+    color: rgb(244, 143, 151);
+}
+
+.task.gray, .board.gray {
+    color: #9b4dca;
+    background: rgba(155, 77, 202, 0.2);
+}
+
+#content .task-category {
+    font-weight: 500;
+    margin-bottom: 7px;
+}

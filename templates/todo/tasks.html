@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if boards %}
+<ul id="boards">
+    <li>
+        <a href="{% url 'todo:tasks' %}" class="board gray">all</a>
+    </li>
+    {% for board in boards %}
+    {% url 'todo:board' slug=board.slug as board_url %}
+    <li>
+        <a href="{{ board_url }}"
+           class="board {{ board.color }}">{{ board.name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<hr>
+
+<div class="row">
+
+    {% with 'wish todo wip done' as list %}
+    {% for status in list.split %}
+
+    <div class="column tasks {{ status }}">
+        <div class="task-category">{{ status|title }}</div>
+        {% for task in tasks %}
+        {% if task.status == status %}
+        <div class="task {{ task.board.color }}" data="{{ task.board.slug }}">
+            <div class="text">{{ task.text }}</div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    {% endfor %}
+    {% endwith %}
+
+</div>
+
+{% endblock content %}
